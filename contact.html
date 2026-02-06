@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+      (function () {
+        emailjs.init("CuVOSChqWXcMFd4wV"); // remplace TON_USER_ID par ton ID EmailJS
+      })();
+    </script>
+
+    <title>Contact | KB Sport</title>
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" href="icons/icon-192.png" />
+  </head>
+
+  <body>
+    <!-- ================= HEADER ================= -->
+    <header class="header">
+      <div class="logo"><span>KB</span><strong>Sport</strong></div>
+
+      <nav class="nav">
+        <button class="menu-toggle">☰</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="index.html#partners">Partenaires</a></li>
+          <li><a href="index.html#products">Planches</a></li>
+          <li><a href="index.html#gallery">Galerie</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact reveal">
+      <h1>Contactez-nous</h1>
+      <p class="contact-intro">
+        Une question, un partenariat ou un devis ? Remplissez le formulaire
+        ci-dessous.
+      </p>
+
+      <form class="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Nom complet</label>
+          <input type="text" id="name" required placeholder="Votre nom" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse email</label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="ex: contact@email.com"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="type">Type de demande</label>
+          <select id="type" required>
+            <option value="">-- Sélectionnez --</option>
+            <option value="Commande">Commande</option>
+            <option value="Devis">Demande de devis</option>
+            <option value="Partenariat">Partenariat</option>
+            <option value="Question">Question</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Sujet</label>
+          <input type="text" id="subject" placeholder="Objet du message" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            rows="5"
+            required
+            placeholder="Écrivez votre message ici..."
+          ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="product">Produit concerné</label>
+          <input type="text" id="product" placeholder="Ex : FMX 2026 Pro 85L" />
+        </div>
+
+        <input
+          type="text"
+          name="company"
+          id="company"
+          autocomplete="off"
+          hidden
+        />
+
+        <button type="submit" class="btn-primary" id="submitOrder">
+          <span class="btn-text">Envoyer la commande</span>
+          <span class="btn-loader" hidden>Envoi...</span>
+        </button>
+      </form>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <p>© 2026 Windsurf Pro Shop</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
