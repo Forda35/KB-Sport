@@ -16,6 +16,9 @@
   --radius: 18px;
   --transition: 0.4s ease;
 }
+html, body {
+  overflow-x: hidden;
+}
 
 html {
   scroll-behavior: smooth;
