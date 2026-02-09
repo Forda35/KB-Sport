@@ -432,3 +432,50 @@ if (slider && slides.length > 1) {
     slider.style.transform = `translateX(-${currentIndex * 100}%)`;
   }, 5000);
 }
+/* ==============================
+   SWITCH PRODUITS TABS
+============================== */
+
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    // retirer active
+    tabButtons.forEach((b) => b.classList.remove("active"));
+    tabContents.forEach((c) => c.classList.remove("active"));
+
+    // activer le bon
+    btn.classList.add("active");
+    document.getElementById(btn.dataset.tab).classList.add("active");
+  });
+});
+const boards = [
+  { name: "FMX 85L Pro", desc: "Freerace High Performance" },
+  { name: "FMX 95L Carbon", desc: "Speed & Control" },
+];
+
+const sails = [
+  { name: "S2 Maui Venom 7.8", desc: "Race Sail Performance" },
+  { name: "S2 Maui Wicked 5.3", desc: "Freestyle Precision" },
+];
+
+function createCard(product) {
+  return `
+    <div class="card">
+      <div class="card-inner">
+        <h3>${product.name}</h3>
+        <p>${product.desc}</p>
+        <a href="contact.html" class="btn-secondary">Commander</a>
+      </div>
+    </div>
+  `;
+}
+
+document.getElementById("boards-cards").innerHTML = boards
+  .map(createCard)
+  .join("");
+
+document.getElementById("sails-cards").innerHTML = sails
+  .map(createCard)
+  .join("");
